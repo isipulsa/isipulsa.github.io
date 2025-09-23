@@ -171,6 +171,13 @@
     </div>
   </div>
   <!-- <script type="module" src="app.js"></script> -->
+  <script>
+    // Matikan semua console di production
+    console.log = function () { };
+    console.debug = function () { };
+    console.info = function () { };
+    console.warn = function () { };
+  </script>
   <script src="dist/bundle.js"></script>
 </body>
 
