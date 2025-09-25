@@ -762,3 +762,114 @@ main.container {
     padding: 0.2rem 0.3rem;
   }
 }
+
+
+/* ============== INI ADALAH PENGATURAN UNTUK DATE PICKER ==================== */
+/* tambahkan di CSS */
+#datepickerModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  /* ❗ kalau mau langsung transparan */
+  padding: 0;
+  /* ❗ hilangkan padding bawaan */
+  border-radius: 8px;
+  /* opsional, kalau mau rounded */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+#datepickerModal .flatpickr-calendar {
+  margin: 0 !important;
+}
+
+#datepickerBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+/* 🌞 Light mode */
+:root[data-theme="light"] {
+  --fp-bg: #fff;
+  --fp-text: #222;
+  --fp-border: #e0e0e5;
+  --fp-hover: #f0f0f0;
+  --fp-selected: #007bff;
+  --fp-selected-text: #fff;
+}
+
+/* 🌙 Dark mode */
+:root[data-theme="dark"] {
+  --fp-bg: #1e1e28;
+  --fp-text: #ddd;
+  --fp-border: rgba(255, 255, 255, 0.2);
+  --fp-hover: rgba(255, 255, 255, 0.1);
+  --fp-selected: #4a90e2;
+  --fp-selected-text: #fff;
+}
+
+:root[data-theme="light"] {
+  --fp-disabled: rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="dark"] {
+  --fp-disabled: rgba(255, 255, 255, 0.3);
+}
+
+/* ========== flatpickr custom theme pakai variable di atas ========== */
+.flatpickr-calendar {
+  background: var(--fp-bg) !important;
+  color: var(--fp-text) !important;
+  border: 1px solid var(--fp-border) !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.flatpickr-day {
+  color: var(--fp-text);
+  border-radius: 4px;
+}
+
+.flatpickr-day:hover {
+  background: var(--fp-hover);
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  background: var(--fp-selected) !important;
+  color: var(--fp-selected-text) !important;
+}
+
+.flatpickr-current-month,
+.flatpickr-weekday {
+  color: var(--fp-text);
+}
+
+.flatpickr-weekday {
+  color: var(--fp-text) !important;
+}
+
+
+/* Tahun (cur-year) dan bulan juga ikut terang */
+.numInput.cur-year,
+.flatpickr-current-month input.cur-year,
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+  color: var(--fp-text) !important;
+  background: transparent !important;
+  /* biar gak ada background putih */
+  border: none !important;
+  /* hilangkan border bawaan */
+}
+
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay {
+  color: var(--fp-disabled) !important;
+}

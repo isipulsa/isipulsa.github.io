@@ -12,6 +12,7 @@
 
   <!-- Pico CSS -->
   <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
   <!-- Strophe -->
   <script src="https://cdn.jsdelivr.net/npm/strophe.js@3.1.1/dist/strophe.umd.min.js"></script>
@@ -19,7 +20,8 @@
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
-
+  
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -170,7 +172,6 @@
       <p id="loginProgressText">0%</p>
     </div>
   </div>
-  <!-- <script type="module" src="app.js"></script> -->
   <script>
     // Matikan semua console di production
     console.log = function () { };
@@ -178,6 +179,7 @@
     console.info = function () { };
     console.warn = function () { };
   </script>
+  <!-- <script type="module" src="app.js"></script> -->
   <script src="dist/bundle.js"></script>
 </body>
 
