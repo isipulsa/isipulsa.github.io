@@ -1,9 +1,9 @@
 // file: sw.js
-const CACHE_NAME = "data-cache-v47";
+const CACHE_NAME = "data-cache-v64";
 const urlsToCache = [
   "./",
   "./index.html",
-  "./dist/bundle.js",
+  "./bundle.js",
   "./style.css",
   "./manifest.json",
   "./icons/icon-192.png",
