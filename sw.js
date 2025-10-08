@@ -1,5 +1,5 @@
 // file: sw.js
-const CACHE_NAME = "data-cache-v72";
+const CACHE_NAME = "data-cache-v73";
 const urlsToCache = [
   "./",
   "./index.html",
