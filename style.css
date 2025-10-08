@@ -429,7 +429,7 @@ main.container {
   /* default hidden */
   align-items: center;
   justify-content: center;
-  z-index: 3000;
+  z-index: 99999;
 }
 
 .modal {
