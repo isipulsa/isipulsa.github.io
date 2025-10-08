@@ -9,6 +9,8 @@
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#000000" id="theme-color">
   <meta name="google" content="notranslate">
+  <meta name="autofill" content="off">
+  <meta name="autocomplete" content="off">
 
   <!-- Pico CSS -->
   <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
@@ -27,6 +29,8 @@
 </head>
 
 <body>
+  <input type="text" style="display:none">
+  <input type="password" style="display:none">
   <div id="pinOverlay" style="display: none;">
     <h2 id="pinMessage">Masukkan PIN Anda</h2>
     <div class="pinCircles">
@@ -123,8 +127,9 @@
         <!-- Icon kontak di kiri -->
         <button id="contactBtn" class="input-contact-btn" type="button" title="Ambil dari Kontak">📇</button>
 
-        <input type="text" id="inputTujuan" placeholder="Masukkan No Tujuan" inputmode="numeric" pattern="[0-9]*"
-          autocomplete="off">
+        <input type="text" id="inputTujuan" name="tujuan_random_123" placeholder="Masukkan No Tujuan"
+          inputmode="numeric" pattern="[0-9]*" autocomplete="off" autocorrect="off" autocapitalize="off"
+          spellcheck="false">
 
         <div class="input-right-wrapper">
           <span id="operatorDisplay" class="input-operator-display"></span>

@@ -1,3 +1,18 @@
+/* Hilangkan outline saat elemen diklik */
+*:focus {
+  outline: none !important;
+}
+
+/* Hilangkan border biru/abu ketika tombol/link disentuh di mobile */
+button:focus,
+button:active,
+a:focus,
+a:active {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent; /* Hilangkan efek highlight di Android/iOS */
+}
+
 html,
 body {
   overscroll-behavior-y: contain;
@@ -429,7 +444,7 @@ main.container {
   /* default hidden */
   align-items: center;
   justify-content: center;
-  z-index: 99999;
+  z-index: 3000;
 }
 
 .modal {
@@ -619,6 +634,8 @@ main.container {
   flex: 1;
   box-sizing: border-box;
   padding-left: 0.5rem;
+  font-weight: bold;
+  font-size: large;
 }
 
 .input-right-wrapper {
