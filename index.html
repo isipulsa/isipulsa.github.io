@@ -20,7 +20,7 @@
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
-  
+
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
   <link rel="stylesheet" href="style.css">
@@ -172,12 +172,18 @@
       <p id="loginProgressText">0%</p>
     </div>
   </div>
+
+  <!-- Tombol Install PWA -->
+  <button id="installPwaBtn" class="installPwaBtn">
+    📱 Install Aplikasi
+  </button>
+
   <script>
     // Matikan semua console di production
-    // console.log = function () { };
-    // console.debug = function () { };
-    // console.info = function () { };
-    // console.warn = function () { };
+    console.log = function () { };
+    console.debug = function () { };
+    console.info = function () { };
+    console.warn = function () { };
   </script>
   <!-- <script type="module" src="app.js"></script> -->
   <script src="bundle.js"></script>
