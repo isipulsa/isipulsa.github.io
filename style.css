@@ -801,9 +801,16 @@ main.container {
   text-align: right;
   font-weight: bold;
   color: var(--pico-primary, #0d6efd);
-  word-break: break-all;
-  /* biar nomor panjang bisa patah */
+  word-break: normal;
+  /* jangan paksa pecah di tengah huruf */
+  overflow-wrap: break-word;
+  /* pecah kata hanya di spasi */
+  white-space: normal;
+  /* izinkan teks turun ke baris baru */
+  line-height: 1.3;
+  /* biar rapi saat teks panjang */
 }
+
 
 @media (max-width: 400px) {
   .detail-table-laporan-modal td {
@@ -1098,15 +1105,21 @@ main.container {
 
 /* ================== THEME VARIABEL UNTUK MENU HUTANG =================== */
 :root[data-theme="light"] {
-  --hutang-bg: #fff;          /* sama seperti modal-bg */
-  --hutang-text: #333;        /* sama seperti modal-text */
-  --hutang-border: #ddd;      /* sama seperti modal-border */
+  --hutang-bg: #fff;
+  /* sama seperti modal-bg */
+  --hutang-text: #333;
+  /* sama seperti modal-text */
+  --hutang-border: #ddd;
+  /* sama seperti modal-border */
 }
 
 :root[data-theme="dark"] {
-  --hutang-bg: #2a2a2a;       /* sama seperti modal-bg dark */
-  --hutang-text: #eee;        /* sama seperti modal-text dark */
-  --hutang-border: #444;      /* sama seperti modal-border dark */
+  --hutang-bg: #2a2a2a;
+  /* sama seperti modal-bg dark */
+  --hutang-text: #eee;
+  /* sama seperti modal-text dark */
+  --hutang-border: #444;
+  /* sama seperti modal-border dark */
 }
 
 /* ============== INI ADALAH PENGATURAN UNTUK CATATAN HUTANG ==================== */
@@ -1270,9 +1283,12 @@ main.container {
 /* ===== Footer Hutang ===== */
 .hutang-footer {
   display: flex;
-  justify-content: center;       /* tombol di tengah */
-  gap: 12px;                     /* jarak antar tombol */
-  padding: 12px 0;               /* jarak atas-bawah footer */
+  justify-content: center;
+  /* tombol di tengah */
+  gap: 12px;
+  /* jarak antar tombol */
+  padding: 12px 0;
+  /* jarak atas-bawah footer */
   border-top: 1px solid var(--hutang-border);
   background-color: var(--hutang-bg);
 }
@@ -1286,7 +1302,7 @@ main.container {
   border: 2px solid transparent;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 /* Tombol Nama Pembeli */
@@ -1323,6 +1339,7 @@ main.container {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
