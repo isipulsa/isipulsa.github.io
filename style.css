@@ -1096,17 +1096,29 @@ main.container {
 
 
 
+/* ================== THEME VARIABEL UNTUK MENU HUTANG =================== */
+:root[data-theme="light"] {
+  --hutang-bg: #fff;          /* sama seperti modal-bg */
+  --hutang-text: #333;        /* sama seperti modal-text */
+  --hutang-border: #ddd;      /* sama seperti modal-border */
+}
+
+:root[data-theme="dark"] {
+  --hutang-bg: #2a2a2a;       /* sama seperti modal-bg dark */
+  --hutang-text: #eee;        /* sama seperti modal-text dark */
+  --hutang-border: #444;      /* sama seperti modal-border dark */
+}
+
 /* ============== INI ADALAH PENGATURAN UNTUK CATATAN HUTANG ==================== */
-/* ============== CATATAN HUTANG PAGE ==================== */
 
 /* Layout dasar halaman */
 #catatanHutangDisplay {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: var(--modal-bg);
-  color: var(--modal-text);
-  border: 1px solid var(--modal-border);
+  background: var(--hutang-bg);
+  color: var(--hutang-text);
+  border: 1px solid var(--hutang-border);
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   animation: fadeIn 0.3s ease-in-out;
@@ -1117,7 +1129,7 @@ main.container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  border-bottom: 1px solid var(--modal-border);
+  border-bottom: 1px solid var(--hutang-border);
   margin-bottom: 0;
 }
 
@@ -1149,7 +1161,7 @@ main.container {
 .judul-catatan {
   font-size: 20px;
   font-weight: 600;
-  color: var(--modal-text);
+  color: var(--hutang-text);
   margin: 0;
 }
 
@@ -1172,7 +1184,7 @@ main.container {
 .info-text {
   font-size: 16px;
   line-height: 1.6;
-  color: var(--modal-text);
+  color: var(--hutang-text);
   opacity: 0.8;
   max-width: 280px;
   margin-left: auto;
@@ -1191,14 +1203,14 @@ main.container {
 
 .loading-hutang {
   text-align: center;
-  color: var(--modal-text);
+  color: var(--hutang-text);
   opacity: 0.7;
 }
 
 /* Kartu hutang */
 .hutang-card {
-  background-color: var(--modal-bg);
-  border: 1px solid var(--modal-border);
+  background-color: var(--hutang-bg);
+  border: 1px solid var(--hutang-border);
   border-radius: 12px;
   padding: 12px 16px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
@@ -1221,7 +1233,7 @@ main.container {
 .hutang-deskripsi {
   font-size: 16px;
   font-weight: 600;
-  color: var(--modal-text);
+  color: var(--hutang-text);
   margin: 0;
 }
 
@@ -1249,18 +1261,60 @@ main.container {
 .hutang-info {
   font-size: 14px;
   line-height: 1.4;
-  color: var(--modal-text);
+  color: var(--hutang-text);
   opacity: 0.9;
   margin-bottom: 6px;
 }
 
-/* Footer */
+
+/* ===== Footer Hutang ===== */
 .hutang-footer {
-  font-size: 12px;
-  color: var(--modal-text);
-  opacity: 0.7;
-  border-top: 1px dashed var(--modal-border);
-  padding-top: 6px;
+  display: flex;
+  justify-content: center;       /* tombol di tengah */
+  gap: 12px;                     /* jarak antar tombol */
+  padding: 12px 0;               /* jarak atas-bawah footer */
+  border-top: 1px solid var(--hutang-border);
+  background-color: var(--hutang-bg);
+}
+
+/* ===== Tombol umum ===== */
+.hutang-footer button {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Tombol Nama Pembeli */
+.hutang-footer button.btn-pembeli {
+  color: #2563eb;
+  border-color: rgba(37, 99, 235, 0.6);
+  background-color: rgba(37, 99, 235, 0.05);
+}
+
+.hutang-footer button.btn-pembeli:hover {
+  background-color: rgba(37, 99, 235, 0.15);
+  color: #2563eb;
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Tombol Sudah Bayar */
+.hutang-footer button.btn-sudah-bayar {
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.6);
+  background-color: rgba(16, 185, 129, 0.05);
+}
+
+.hutang-footer button.btn-sudah-bayar:hover {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.2);
+  transform: translateY(-2px);
 }
 
 /* Animasi */
