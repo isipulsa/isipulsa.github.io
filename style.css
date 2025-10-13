@@ -1426,3 +1426,25 @@ main.container {
   box-shadow: 0 0 3px rgba(75, 123, 236, 0.5);
 }
 
+
+
+/* === Wrapper untuk tabel agar bisa di-scroll di layar kecil === */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Tambahkan padding agar tabel tidak nempel ke tepi layar */
+.table-wrapper table {
+  min-width: 300px; /* agar scroll muncul di layar sempit */
+}
+
+/* Responsif tambahan */
+@media (max-width: 400px) {
+  .tabel-downline th, 
+  .tabel-downline td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
