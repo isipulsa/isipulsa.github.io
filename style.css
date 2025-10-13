@@ -932,6 +932,15 @@ main.container {
 
 
 /* ============== INI ADALAH PENGATURAN UNTUK INPUT NOMINAL ==================== */
+
+
+/* Pastikan semua elemen box-sizing border-box agar border tidak menambah tinggi */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Default (Light mode) */
 :root {
   --border-color: #ccc;
@@ -961,28 +970,29 @@ main.container {
   flex: 1 1 60%;
   height: 50px;
   display: flex;
+  align-items: center; /* ⬅️ pastikan isi vertikal center */
+  padding: 0 0.5rem;
+  box-sizing: border-box;
 }
 
 .input-nominal {
   flex: 1;
-  border: 1px solid var(--border-color);
+  border: none; /* ⬅️ hapus border internal agar tinggi sama */
   outline: none;
   font-size: 14px;
-  /* atur sesuai kebutuhan */
-  height: 100%;
+  height: 100%; /* isi penuh wrapper */
+  background: transparent;
   box-sizing: border-box;
 }
 
 /* Prefix Rp */
 .input-nominal-wrapper span {
   margin-right: 0.5rem;
-  font-size: 14px;
   display: flex;
   align-items: center;
+  font-size: 14px;
   color: var(--prefix-color);
-  /* ✅ ikut tema */
 }
-
 .select-provider,
 .input-nominal-wrapper {
   height: 50px;
