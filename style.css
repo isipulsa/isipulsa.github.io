@@ -970,17 +970,20 @@ main.container {
   flex: 1 1 60%;
   height: 50px;
   display: flex;
-  align-items: center; /* ⬅️ pastikan isi vertikal center */
+  align-items: center;
+  /* ⬅️ pastikan isi vertikal center */
   padding: 0 0.5rem;
   box-sizing: border-box;
 }
 
 .input-nominal {
   flex: 1;
-  border: none; /* ⬅️ hapus border internal agar tinggi sama */
+  border: none;
+  /* ⬅️ hapus border internal agar tinggi sama */
   outline: none;
   font-size: 14px;
-  height: 100%; /* isi penuh wrapper */
+  height: 100%;
+  /* isi penuh wrapper */
   background: transparent;
   box-sizing: border-box;
 }
@@ -993,6 +996,7 @@ main.container {
   font-size: 14px;
   color: var(--prefix-color);
 }
+
 .select-provider,
 .input-nominal-wrapper {
   height: 50px;
@@ -1355,3 +1359,70 @@ main.container {
     transform: translateY(0);
   }
 }
+
+
+
+
+/* ============== INI ADALAH PENGATURAN UNTUK HALAMAN DOWNLINE ==================== */
+
+
+/* Styling tabel downline */
+.tabel-downline {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tabel-downline th {
+  background: #4b7bec;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.tabel-downline td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.tabel-downline tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.tabel-downline tr:hover {
+  background-color: #e9f3ff;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #4b7bec;
+  box-shadow: 0 0 3px rgba(75, 123, 236, 0.5);
+}
+
