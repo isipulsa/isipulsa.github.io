@@ -423,9 +423,9 @@ Periksa Username dan Password!`,"error"),Te(100),tt(),Dr=!0,setTimeout(()=>{Dr=!
         <span class="akun-label">Keluar Aplikasi</span>
       </button>
 
-      <button class="akun-item" id="btnKeluarAplikasi">
+      <button class="akun-item" id="btnKeluarAplikasi2">
         <span class="akun-icon">\u{1F6AA}</span>
-        <span class="akun-label">Mau Keluar Aplikasi?</span>
+        <span class="akun-label">Mau Keluar Aplikasi ?</span>
       </button>
 
     </div>
