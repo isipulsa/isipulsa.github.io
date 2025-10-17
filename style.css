@@ -1369,9 +1369,6 @@ main.container {
   }
 }
 
-
-
-
 /* ============== INI ADALAH PENGATURAN UNTUK HALAMAN DOWNLINE ==================== */
 
 
@@ -1458,4 +1455,24 @@ main.container {
     padding: 8px;
     font-size: 14px;
   }
+}
+
+
+
+/* ============== INI ADALAH PENGATURAN UNTUK HALAMAN PDAM ==================== */
+
+#pencarian {
+  flex: 1;
+  box-sizing: border-box;
+  font-size: large;
+  border-width: 2px;
+}
+
+#daftarKota {
+  max-height: 220px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
 }
