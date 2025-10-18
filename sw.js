@@ -1,5 +1,5 @@
 // file: sw.js
-export const CACHE_NAME = "2";
+const CACHE_NAME = "data-cache-v104";
 const urlsToCache = [
   "./",
   "./index.html",
