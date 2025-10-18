@@ -1,5 +1,5 @@
 // file: sw.js
-const CACHE_NAME = "data-cache-v105";
+const CACHE_NAME = "data-cache-v106";
 const urlsToCache = [
   "./",
   "./index.html",
@@ -12,33 +12,40 @@ const urlsToCache = [
 
 // Install
 self.addEventListener("install", (event) => {
+  self.skipWaiting(); // ⬅️ langsung aktifkan SW baru
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(urlsToCache);
-    })
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
   );
 });
 
 // Activate
 self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
+    caches.keys().then((cacheNames) =>
+      Promise.all(
         cacheNames.map((cache) => {
           if (cache !== CACHE_NAME) {
             return caches.delete(cache);
           }
         })
-      );
-    })
+      )
+    ).then(() => self.clients.claim()) // ⬅️ langsung kendalikan semua tab
   );
 });
 
-// Fetch
+// Fetch (network first)
 self.addEventListener("fetch", (event) => {
+  // Skip non-GET requests (e.g. POST)
+  if (event.request.method !== "GET") return;
+
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
+    fetch(event.request)
+      .then((response) => {
+        // Jika sukses, simpan ke cache
+        const clone = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+        return response;
+      })
+      .catch(() => caches.match(event.request)) // fallback ke cache jika offline
   );
 });
